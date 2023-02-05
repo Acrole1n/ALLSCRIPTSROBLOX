@@ -1,0 +1,44 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Funny Monkey", "Ocean")
+
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+
+MainSection:NewButton("Buy Rate", "Buys the rates", function()
+    local args = {
+        [1] = 1
+    }
+    
+    game:GetService("ReplicatedStorage").GTycoonClient.Remotes.BuySpeed:FireServer(unpack(args))    
+end)
+
+MainSection:NewButton("Deposit", "Deposit banana", function()
+    game:GetService("ReplicatedStorage").GTycoonClient.Remotes.DepositDrops:FireServer()
+
+end)
+
+MainSection:NewButton("Buy Monkey", "Buys monkeys '.'", function()
+    local args = {
+        [1] = 1
+    }
+    
+    game:GetService("ReplicatedStorage").GTycoonClient.Remotes.BuyDropper:FireServer(unpack(args))
+
+end)
+
+
+
+MainSection:NewButton("Merge", "Merge to make monkey bettir", function()
+    game:GetService("ReplicatedStorage").GTycoonClient.Remotes.MergeDroppers:FireServer()
+end)
+
+MainSection:NewButton("+100 banana", "itys over 99", function()
+    local args = {
+        [1] = 100
+    }
+    
+    game:GetService("ReplicatedStorage").GTycoonClient.Remotes.GrabDrops:FireServer(unpack(args))
+end)
+
+
+
